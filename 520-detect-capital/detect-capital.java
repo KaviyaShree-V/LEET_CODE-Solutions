@@ -8,7 +8,11 @@ class Solution {
         char c = word.charAt(0);
         char capital = Character.toUpperCase(c);
         String s3 = Character.toString(capital) + word.substring(1, word.length()).toLowerCase();
-        if(word.equals(s1) || word.equals(s2) || word.equals(s3))
+        if(word.equals(s1))
+        return true;
+        else if(word.equals(s2))
+        return true;
+        else if(word.equals(s3))
         return true;
         return false;
     }
