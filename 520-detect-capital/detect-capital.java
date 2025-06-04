@@ -5,9 +5,7 @@ class Solution {
         return true;
         String s1 = word.toUpperCase();
         String s2 = word.toLowerCase();
-        char c = word.charAt(0);
-        char capital = Character.toUpperCase(c);
-        String s3 = Character.toString(capital) + word.substring(1, word.length()).toLowerCase();
+        String s3 = Character.toUpperCase(word.charAt(0)) + word.substring(1, word.length()).toLowerCase();
         if(word.equals(s1))
         return true;
         else if(word.equals(s2))
