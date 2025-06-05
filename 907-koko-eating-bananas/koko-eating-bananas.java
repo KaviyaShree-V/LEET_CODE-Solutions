@@ -4,10 +4,11 @@ class Solution {
         int low = 1, high = findMax(piles), ans = 0;
         while(low <= high)
         {
-            int mid = (low + high)/2;
-            int total_hours = calHours(piles, mid);
-            if(total_hours <= h)
+            int mid = low + (high - low)/2;
+            long total_hours = calHours(piles, mid);
+            if(total_hours <= (long)h)
             {
+                ans = mid;
                 high = mid - 1;
             }
             else
@@ -15,7 +16,7 @@ class Solution {
                 low = mid + 1;
             }
         }
-        return low;
+        return ans;
     }
 
     public int findMax(int[] piles)
@@ -28,12 +29,13 @@ class Solution {
         return high;
     }
 
-    public int calHours(int[] piles, int hours)
+    public long calHours(int[] piles, int hours)
     {
-        int thours = 0;
-        for(int i=0; i<piles.length; i++)
+        long thours = 0;
+        for(int pile : piles)
         {
-            thours += Math.ceil((double)piles[i]/(double)hours);
+            // thours += Math.ceil((double)piles[i]/(double)hours);
+            thours += (pile + hours - 1) / hours; 
         }
         return thours;
     }
