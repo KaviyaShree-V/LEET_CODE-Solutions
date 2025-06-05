@@ -1,5 +1,20 @@
 class Solution {
-    public int mySqrt(int x) {
-       return (int)Math.sqrt(x);
+    public int mySqrt(int x) 
+    {
+       int low = 0, high = x;
+       while(low <= high)
+       {
+        long mid = (low + high)/2;
+        long m = mid * mid;
+        if(m <= (long)x)
+        {
+            low = (int) mid + 1;
+        }
+        else
+        {
+            high = (int) mid - 1;
+        }
+       }
+       return high;
     }
 }
