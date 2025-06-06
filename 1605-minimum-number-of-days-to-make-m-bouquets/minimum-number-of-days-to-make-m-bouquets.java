@@ -1,7 +1,13 @@
 class Solution {
     public int minDays(int[] bloomDay, int m, int k) 
     {
-        int min = findMin(bloomDay), max = findMax(bloomDay);
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        for(int i=0; i<bloomDay.length; i++)
+        {
+            min = Math.min(min, bloomDay[i]);
+            max = Math.max(max, bloomDay[i]);
+        }
         long val = (long) m*k;
         if(bloomDay.length < val)
         return -1;
@@ -20,26 +26,6 @@ class Solution {
             }
         }
         return ans;
-    }
-
-    public int findMin(int[] bloomDay)
-    {
-        int min = Integer.MAX_VALUE;
-        for(int i=0; i<bloomDay.length; i++)
-        {
-            min = Math.min(min, bloomDay[i]);
-        }
-        return min;
-    }
-
-    public int findMax(int[] bloomDay)
-    {
-        int max = Integer.MIN_VALUE;
-        for(int i=0; i<bloomDay.length; i++)
-        {
-            max = Math.max(max, bloomDay[i]);
-        }
-        return max;
     }
 
     public boolean check(int[] bloomDay, int mid, int m, int k)
