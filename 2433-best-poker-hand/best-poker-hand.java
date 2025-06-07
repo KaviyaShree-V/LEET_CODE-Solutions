@@ -32,11 +32,11 @@ class Solution {
         {
             if(count == 5)
             {
-                s = "Flush";
+               return "Flush";
             }
             else 
             {
-                if(max >=3)
+            if(max >=3)
             {
                 s = "Three of a Kind";
             }
@@ -46,7 +46,7 @@ class Solution {
             }
             else
             {
-                s = "High Card";
+                return "High Card";
             }
             }
         }
