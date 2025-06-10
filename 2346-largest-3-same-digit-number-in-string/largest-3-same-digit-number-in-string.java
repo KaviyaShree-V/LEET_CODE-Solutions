@@ -1,7 +1,20 @@
 class Solution {
     public String largestGoodInteger(String num) 
     {
-        int index = -1;
+        String[] s = {"999", "888", "777", "666", "555", "444", "333", "222", "111", "000"};
+
+        for(String check : s){
+            if(num.contains(check)){
+                return check;
+            }
+        }
+
+        return "";
+    }
+}
+
+/*
+int index = -1;
 
         for (int i = 0; i <= num.length() - 3; i++) 
         {
@@ -33,5 +46,4 @@ class Solution {
         if (index == 0)
             return "000";
         return String.valueOf(index);
-    }
-}
+*/
